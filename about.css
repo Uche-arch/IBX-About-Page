@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
 
 * {
   margin: 0;
@@ -10,6 +12,9 @@ body {
   background: #000000;
   font-family: "DM Sans", sans-serif;
 }
+button {
+  font-family: "Poppins", sans-serif;
+}
 
 header {
   padding: 18px 60px;
@@ -18,13 +23,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 .nav-links {
   display: flex;
   align-items: center;
   gap: 44px;
-  transition: transform 0.4s ease; /* for sliding effect */
 }
+
 .nav-links a {
   color: #dbdbdb;
   text-decoration: none;
@@ -46,11 +52,25 @@ nav {
   color: #dbdbdb;
 }
 .showcase {
-  background-image: url("./img/View\ Port.png");
-  background-size: cover; /* makes the image cover the whole section */
-  background-position: center; /* centers the image */
-  background-repeat: no-repeat; /* prevents tiling */
+  background-image: url("./img/Group\ 2361.png");
+  background-position: center;
+  background-size: 180%;
+  /* background-repeat: no-repeat; */
   height: 86.6vh;
+  position: relative;
+}
+.text {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 50vw;
+  color: #ffffff;
+}
+.text h2 {
+  font-size: 45px;
+}
+.text p {
+  font-size: 18px;
 }
 .meet-team {
   margin: 80px 0;
@@ -59,7 +79,6 @@ nav {
 .team-info {
   display: flex;
   align-items: center;
-  /* gap: 2rem; */
   justify-content: space-between;
 }
 .team-info h3 {
@@ -107,7 +126,8 @@ nav {
   text-align: center;
   width: 100%;
 }
-.text-overlay h4, p {
+.text-overlay h4,
+p {
   color: #ffffff;
 }
 .team-members::-webkit-scrollbar {
@@ -137,7 +157,7 @@ footer .country-icon {
 footer button {
   color: #ffffff;
   background-color: transparent;
-  border: 1px solid #eeeeec;
+  border: 2px solid #eeeeec;
   padding: 10px 15px;
 }
 .footer-copy {
@@ -170,33 +190,44 @@ footer button {
 
 @media screen and (max-width: 900px) {
   header {
-    padding: 18px 40px;
+    padding: 18px 0px;
   }
   nav {
     padding: 12px 20px;
+    position: relative;
   }
 
   .nav-links {
-    position: fixed;
-    top: 0;
-    left: -250px; /* hide off-screen */
-    height: 100%;
-    width: 250px;
-    background-color: #111; /* or match your header bg */
+    position: absolute;
+    top: 90px;                   
+    left: 0;
+    width: 100%;
+    background: #000;            
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 60px 20px;
+    align-items: center;
     gap: 20px;
-    transform: translateX(0);
-    transition: left 0.4s ease;
+    max-height: 0;              
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0px 20px 0px 0;         
   }
 
   .nav-links.active {
-    left: 0; /* slide in from left */
+    max-height: 250px;           
+    padding: 0px 20px 20px 0;         
   }
 
   .menu-icon {
     display: block;
+    margin-bottom: 5px;
+  }
+    .text {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    width: 80vw;
+    color: #ffffff;
   }
   .large-screen-only {
     display: none;
@@ -210,7 +241,24 @@ footer button {
 }
 @media screen and (max-width: 600px) {
   header {
-    padding: 10px 10px;
+    padding: 10px 0px;
+  }
+  .showcase {
+    background-size: 850%;
+    background-position: 60% center;
+  }
+  .text {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    width: 90vw;
+    color: #ffffff;
+  }
+  .text h2 {
+    font-size: 45px;
+  }
+  .text p {
+    font-size: 16px;
   }
   .meet-team {
     margin: 60px 0;
@@ -231,7 +279,7 @@ footer button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }  
+  }
   .team-members > div {
     width: 250px;
     height: 250px;

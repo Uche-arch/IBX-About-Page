@@ -26,7 +26,16 @@
         </div>
       </nav>
     </header>
-    <section class="showcase"></section>
+    <section class="showcase">
+      <div class="text">
+        <h2>Who Are We</h2>
+        <p>
+          The Ibom BlockChain Xperience is organized by Moov Team, a team
+          dedicated to creating impactful events that connect ideas and people
+          across the globe.
+        </p>
+      </div>
+    </section>
     <section class="meet-team">
       <div class="team-info">
         <h3>
@@ -129,11 +138,13 @@
     </footer>
   </body>
   <script>
-    const menuIcon = document.querySelector(".menu-icon");
+    const menuIcon = document.querySelector(".menu-icon i");
     const navLinks = document.querySelector(".nav-links");
 
     menuIcon.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+      menuIcon.classList.toggle("fa-bars");
+      menuIcon.classList.toggle("fa-xmark");
     });
   </script>
 </html>
